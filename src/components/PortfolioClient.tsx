@@ -79,19 +79,19 @@ export default function PortfolioClient({ data }: { data: any }) {
             </div>
           </motion.div>
           
-          <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-extrabold tracking-tight mb-4">
+          <motion.h1 variants={fadeIn} className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-4 px-2">
             {pData.title}
           </motion.h1>
           
-          <motion.div variants={fadeIn} className="flex flex-wrap justify-center gap-3 mb-8">
+          <motion.div variants={fadeIn} className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 px-4">
             {pData.roles?.map((role: string, i: number) => (
-              <span key={i} className="px-4 py-2 bg-zinc-900/80 border border-zinc-800 rounded-full text-zinc-300 text-sm md:text-base backdrop-blur-sm">
+              <span key={i} className="px-3 py-1.5 md:px-4 md:py-2 bg-zinc-900/80 border border-zinc-800 rounded-full text-zinc-300 text-xs sm:text-sm md:text-base backdrop-blur-sm">
                 {role}
               </span>
             ))}
           </motion.div>
           
-          <motion.p variants={fadeIn} className="text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-10">
+          <motion.p variants={fadeIn} className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-10 px-4">
             {pData.bio}
           </motion.p>
           
@@ -131,23 +131,23 @@ export default function PortfolioClient({ data }: { data: any }) {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 px-6 bg-zinc-900/50">
+      <section className="py-16 md:py-24 px-4 sm:px-6 bg-zinc-900/50">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12"
           >
             <motion.div variants={fadeIn} className="space-y-6">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <span className="w-8 h-1 bg-blue-500 rounded-full"></span>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 flex items-center gap-3">
+                <span className="w-6 md:w-8 h-1 bg-blue-500 rounded-full"></span>
                 Languages
               </h2>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 md:gap-3">
                 {pData.languages?.map((lang: string, i: number) => (
-                  <span key={i} className="px-5 py-3 bg-zinc-950 rounded-xl border border-zinc-800 text-zinc-300 font-medium hover:border-blue-500/50 transition-colors">
+                  <span key={i} className="px-4 py-2 md:px-5 md:py-3 bg-zinc-950 rounded-xl border border-zinc-800 text-zinc-300 text-sm md:text-base font-medium hover:border-blue-500/50 transition-colors">
                     {lang}
                   </span>
                 ))}
@@ -155,13 +155,13 @@ export default function PortfolioClient({ data }: { data: any }) {
             </motion.div>
             
             <motion.div variants={fadeIn} className="space-y-6">
-              <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                <span className="w-8 h-1 bg-purple-500 rounded-full"></span>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 flex items-center gap-3">
+                <span className="w-6 md:w-8 h-1 bg-purple-500 rounded-full"></span>
                 Technologies
               </h2>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 md:gap-3">
                 {pData.technologies?.map((tech: string, i: number) => (
-                  <span key={i} className="px-5 py-3 bg-zinc-950 rounded-xl border border-zinc-800 text-zinc-300 font-medium hover:border-purple-500/50 transition-colors">
+                  <span key={i} className="px-4 py-2 md:px-5 md:py-3 bg-zinc-950 rounded-xl border border-zinc-800 text-zinc-300 text-sm md:text-base font-medium hover:border-purple-500/50 transition-colors">
                     {tech}
                   </span>
                 ))}
@@ -172,17 +172,17 @@ export default function PortfolioClient({ data }: { data: any }) {
       </section>
 
       {/* Projects Section */}
-      <section className="py-24 px-6 relative">
+      <section className="py-20 md:py-28 px-4 sm:px-6 relative">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
-            className="mb-16 text-center"
+            className="mb-12 md:mb-16 text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Selected Works</h2>
-            <p className="text-zinc-400 max-w-2xl mx-auto text-lg">A collection of projects I've built that show my passion for development and design.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Selected Works</h2>
+            <p className="text-zinc-400 max-w-2xl mx-auto text-base md:text-lg">A collection of projects I've built that show my passion for development and design.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

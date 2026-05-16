@@ -3,6 +3,33 @@
 import dbConnect from "./db";
 import Portfolio from "@/models/Portfolio";
 import { revalidatePath } from "next/cache";
+import cloudinary from "./cloudinary";
+
+export async function uploadImage(formData: FormData) {
+  try {
+    const file = formData.get("file") as File;
+    if (!file) throw new Error("No file provided");
+
+    const arrayBuffer = await file.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+
+    return new Promise((resolve, reject) => {
+      cloudinary.uploader.upload_stream(
+        { folder: "portfolio" },
+        (error, result) => {
+          if (error) {
+            console.error("Cloudinary upload error:", error);
+            return reject({ success: false, error: error.message });
+          }
+          resolve({ success: true, url: result?.secure_url });
+        }
+      ).end(buffer);
+    });
+  } catch (error: any) {
+    console.error("Upload image error:", error);
+    return { success: false, error: error.message };
+  }
+}
 
 export async function getPortfolioData() {
   try {
