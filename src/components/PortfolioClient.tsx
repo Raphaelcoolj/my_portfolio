@@ -224,7 +224,7 @@ export default function PortfolioClient({ data }: { data: any }) {
       {/* Footer */}
       <footer className="py-8 text-center text-zinc-500 border-t border-zinc-900">
         <p>© {new Date().getFullYear()} {pData.title}. All rights reserved.</p>
-        <Link href="/admin" className="text-xs mt-2 inline-block hover:text-zinc-300">Admin Area</Link>
+        
       </footer>
     </div>
   );
